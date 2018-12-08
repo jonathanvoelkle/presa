@@ -42,7 +42,7 @@ export const BaseBackground = styled.div`
   height: 100%;
 `
 
-export const PlainBackground = BaseBackground.extend`
+export const PlainBackground = styled(BaseBackground)`
   ${props => props.raw && `background: ${props.raw}`};
 
   /*

@@ -23,7 +23,7 @@ export const Header = styled.h1`
 `
 
 export const makeHeader = (tag, level, weight) =>
-  Header.withComponent(tag).extend.attrs({ level, weight })``
+  styled(Header.withComponent(tag)).attrs({ level, weight })``
 
 // Header components
 export const H1 = makeHeader('h1', 1, 'bold')

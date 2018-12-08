@@ -65,7 +65,7 @@ class VideoBackground extends React.Component {
   }
 }
 
-const IFrame = BaseBg.withComponent('iframe').extend`
+const IFrame = styled(BaseBg.withComponent('iframe'))`
   border: none;
 
   // when video is being loaded

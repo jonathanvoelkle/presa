@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import styled, { injectGlobal } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import { Presentation, Slide } from '../src'
 import { H1, H2, H3, H4, Code } from '../src/blocks'
@@ -27,8 +27,8 @@ const PitchDeck = () => (
     >
       <PresaTitle>Presa</PresaTitle>
       <PresaSlogan>
-        Create slides in <b>React</b>, present with joy! <br />Built with
-        styled-components 💅
+        Create slides in <b>React</b>, present with joy! <br />
+        Built with styled-components 💅
       </PresaSlogan>
 
       <p>
@@ -54,8 +54,8 @@ const PitchDeck = () => (
 
         <Description>
           Install Presa in your project by running{' '}
-          <InlineCode>yarn add presa</InlineCode> command.<br /> You'll need to
-          install <InlineCode>react</InlineCode> and{' '}
+          <InlineCode>yarn add presa</InlineCode> command.
+          <br /> You'll need to install <InlineCode>react</InlineCode> and{' '}
           <InlineCode>styled-components</InlineCode> as well.
         </Description>
       </Numbered>
@@ -184,6 +184,7 @@ import { VideoBackground } from 'presa/blocks'
         https://github.com/molefrog/presa
       </a>
     </Slide>
+    <GlobalStyle />
   </Presentation>
 )
 
@@ -268,7 +269,7 @@ const PresaIcon = styled(Presa)`
 `
 
 // to prevent additional scrollbars
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;

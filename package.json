@@ -29,7 +29,7 @@
     "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
-    "jest": "^22.4.3",
+    "jest": "^23.6.0",
     "lint-staged": "^7.0.0",
     "parcel-bundler": "^1.7.0",
     "prettier": "^1.11.1",
@@ -38,13 +38,16 @@
     "react-dom": "^16.3.0",
     "react-syntax-highlighter": "^7.0.2",
     "react-test-renderer": "^16.3.0",
-    "styled-components": "^3.2.3"
+    "styled-components": "^4.1.2"
   },
   "dependencies": {
     "create-react-context": "^0.2.1",
     "get-youtube-id": "^1.0.0"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
