@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 
 import { Presentation, Slide } from '../src'
 import { H1, H2, H3, H4, Code } from '../src/blocks'
@@ -184,7 +184,6 @@ import { VideoBackground } from 'presa/blocks'
         https://github.com/molefrog/presa
       </a>
     </Slide>
-    <GlobalStyle />
   </Presentation>
 )
 
@@ -266,14 +265,6 @@ const PresaIcon = styled(Presa)`
   margin-right: 14px;
   width: 40px;
   height: 40px;
-`
-
-// to prevent additional scrollbars
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-  }
 `
 
 const rerenderApp = () => {
