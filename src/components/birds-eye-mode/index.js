@@ -73,7 +73,7 @@ class NavigationMode extends React.Component {
     const { slides, currentSlide } = this.props
 
     return (
-      <Container innerRef={el => (this._root = el)}>
+      <Container ref={el => (this._root = el)}>
         <Grid>
           {slides.map((slide, index) => {
             const isLoaded = !!this.state.isSlideLoaded[index.toString()]

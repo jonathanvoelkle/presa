@@ -50,7 +50,7 @@ class SlideshowMode extends React.Component {
         {showToc && <TocColumn {...this.props} />}
 
         <Main>
-          <CurrentSlide innerRef={el => (this._slideCont = el)}>
+          <CurrentSlide ref={el => (this._slideCont = el)}>
             <SlideCard
               key={slide.index}
               slide={slide}
