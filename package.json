@@ -42,7 +42,8 @@
   },
   "dependencies": {
     "create-react-context": "^0.2.1",
-    "get-youtube-id": "^1.0.0"
+    "get-youtube-id": "^1.0.0",
+    "react-markdown": "^4.0.4"
   },
   "lint-staged": {
     "*.{js,json,css,md}": [

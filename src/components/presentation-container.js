@@ -197,6 +197,22 @@ const GlobalContainer = styled.div`
   width: 100vw;
   height: 100vh;
 
+  // ${props =>
+    props.theme.enableLightBulb
+      ? `
+  //   -webkit-user-select: none;  
+  //   -moz-user-select: none;    
+  //   -ms-user-select: none;      
+  //   user-select: none;
+  //   :hover {
+  //     cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiCiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGZpbHRlciBpZD0iYmx1ck1lIj4KICAgIDxmZUdhdXNzaWFuQmx1ciBpbj0iU291cmNlR3JhcGhpYyIgc3RkRGV2aWF0aW9uPSIyIiAvPgogIDwvZmlsdGVyPgogIDxjaXJjbGUgY3g9IjE2IiAgY3k9IjE2IiByPSIxMCIgZmlsbD0icmVkIiBmaWx0ZXI9InVybCgjYmx1ck1lKSIgLz4KPC9zdmc+')
+  //     , auto; 
+  //   }
+
+  // `
+      : ``}
+ 
+
   /* Setup typography */
   font-family: ${props => props.theme.baseFont};
   -webkit-font-smoothing: antialiased;
@@ -206,7 +222,7 @@ const GlobalContainer = styled.div`
     box-sizing: border-box;
   }
 
-  color: ${props => props.theme.textColor};
+  color: ${props => props.theme.textColor}; 
 `
 
 export default Presentation

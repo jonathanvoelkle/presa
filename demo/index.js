@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
+import ReactMarkdown from 'react-markdown'
+
 import { Presentation, Slide } from '../src'
 import { H1, H2, H3, H4, Code } from '../src/blocks'
 import VideoBackground from '../src/blocks/video-background'
@@ -12,6 +14,69 @@ import GithubButton from './github-button'
 
 const baseTextColor = '#444'
 const primaryColor = '#3c59ff'
+
+const HeadingChoice = props => {
+  switch (props.level) {
+    case 1:
+      return <H1 {...props} />
+    case 2:
+      return <H2 {...props} />
+    case 3:
+      return <H3 {...props} />
+    default:
+      return <H4 {...props} />
+  }
+}
+
+const RENDERERS = {
+  // text: props => <Description {...props} />,
+  heading: props => HeadingChoice(props),
+  inlineCode: props => <InlineCode {...props} />,
+  code: props => <Code {...props}>{props.value}</Code>
+}
+
+const slide1 = `
+  # Level 1 
+
+  text
+
+  ## Level 2
+
+  text 
+
+  ### Level 3
+
+  text 
+
+  #### Level 4
+`
+
+const slide2 = `
+# Quick Start
+### creating your first presentation in 10 seconds
+
+Install Presa in your project by running \`yarn add presa\` command.
+  
+You'll need to install \`react\` and \`styled-components\` as well.
+`
+
+const slide3 = `
+\`\`\`js
+import { Presentation, Slide } from 'presa'
+
+const App = () =>
+  <Presentation name="Lightning talk">
+    <Slide name="Introduction">
+      Hello, everyone!
+    </Slide>
+
+    {/* Add your own slides here */}
+  </Presentation>
+
+// Make sure you render into a full-page container
+ReactDOM.render(<App />, container)
+\`\`\`
+`
 
 const PitchDeck = () => (
   <Presentation name="Presa pitch deck" theme={{ textColor: baseTextColor }}>
@@ -46,6 +111,9 @@ const PitchDeck = () => (
         controls below.
       </Footnote>
     </Slide>
+    <Slide>
+      <ReactMarkdown renderers={RENDERERS} source={slide1} />
+    </Slide>
 
     <Slide name="Installing Presa" fade={0.2} centered>
       <Numbered number={1}>
@@ -59,6 +127,9 @@ const PitchDeck = () => (
           <InlineCode>styled-components</InlineCode> as well.
         </Description>
       </Numbered>
+    </Slide>
+    <Slide>
+      <ReactMarkdown renderers={RENDERERS} source={slide2} />
     </Slide>
 
     <Slide name="Getting started: code" centered>
@@ -77,6 +148,10 @@ const App = () =>
 ReactDOM.render(<App />, container)`}</Code>
     </Slide>
 
+    <Slide>
+      <ReactMarkdown renderers={RENDERERS} source={slide3} />
+    </Slide>
+
     <Slide
       name="Slide Backgrounds"
       background={require('./images/camera.jpg')}
@@ -86,7 +161,7 @@ ReactDOM.render(<App />, container)`}</Code>
       <Numbered inverse number={2}>
         <H1>Slide Backgrounds</H1>
         <H3>
-          Presa supports images, colors and custom elements <br />
+          Presa suppo rts images, colors and custom elements <br />
           as slide backgrounds
         </H3>
       </Numbered>
